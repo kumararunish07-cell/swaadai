@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SwaadAI — Food that fits your day</title>
+  <meta name="description" content="An explainable AI food recommendation demo for everyday Indian meals.">
+  <link rel="stylesheet" href="/styles.css?v=3">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top"><span class="brand-mark">✦</span> SwaadAI</a>
+    <nav><a href="#how-ai-helps">Why AI?</a><a href="#recommend">Get a pick</a></nav>
+    <span class="status-pill"><span class="pulse"></span> Explainable AI</span>
+  </header>
+
+  <main id="top">
+    <section class="hero section-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">YOUR PERSONAL FOOD COMPASS</p>
+        <h1>Good food,<br><em>thoughtfully chosen.</em></h1>
+        <p class="lede">Tell us what your day needs. SwaadAI blends your goals, taste, time, and budget to suggest meals with a reason you can actually understand.</p>
+        <a class="primary-cta" href="#recommend">Find my meal <span>→</span></a>
+        <div class="trust-row"><span>✓ No account needed</span><span>✓ Demo-safe</span><span>✓ Human-readable reasons</span></div>
+      </div>
+      <div class="hero-art" aria-label="Illustration of a colorful healthy bowl">
+        <div class="sun"></div><div class="leaf leaf-one"></div><div class="leaf leaf-two"></div>
+        <div class="bowl"><div class="food food-green"></div><div class="food food-red"></div><div class="food food-yellow"></div><div class="food food-white"></div><div class="herb"></div></div>
+        <div class="art-note"><strong>Made for your moment</strong><span>Context beats generic lists.</span></div>
+      </div>
+    </section>
+
+    <section id="recommend" class="recommender section-grid">
+      <div>
+        <p class="eyebrow">01 / SET YOUR CONTEXT</p>
+        <h2>What would make<br>today's meal <em>right?</em></h2>
+        <p class="muted">Your answers become signals. AI weighs them together instead of treating every person the same.</p>
+        <div class="signal-list"><span><b>Goal</b> what matters now</span><span><b>Taste</b> what feels like you</span><span><b>Context</b> what your day allows</span></div>
+      </div>
+      <form id="preferences" class="preference-card">
+        <label>Today's goal<select name="goal"><option value="energy">Steady energy</option><option value="protein">More protein</option><option value="light">Light & balanced</option><option value="comfort">Comfort food</option></select></label>
+        <label>Diet<select name="diet"><option value="vegetarian">Vegetarian</option><option value="vegan">Vegan</option><option value="eggetarian">Eggetarian</option><option value="any">Anything</option></select></label>
+        <label>Cuisine<select name="cuisine"><option value="any">Surprise me — any cuisine</option><option value="north-indian">North Indian</option><option value="south-indian">South Indian</option><option value="chinese">Chinese</option><option value="italian">Italian</option><option value="mexican">Mexican</option><option value="thai">Thai</option><option value="japanese">Japanese</option><option value="continental">Continental</option></select></label>
+        <label>Flavor mood<select name="flavor"><option value="homestyle">Homestyle Indian</option><option value="spicy">Bold & spicy</option><option value="fresh">Fresh & light</option><option value="familiar">Familiar comfort</option></select></label>
+        <div class="two-fields"><label>Time<select name="time"><option value="15">15 minutes</option><option value="30" selected>30 minutes</option><option value="60">Up to an hour</option></select></label><label>Budget<select name="budget"><option value="low">₹ budget-friendly</option><option value="mid" selected>₹₹ moderate</option><option value="high">₹₹₹ flexible</option></select></label></div>
+        <button class="primary-cta full" type="submit">Ask SwaadAI <span>→</span></button>
+        <p id="request-status" class="request-status" aria-live="polite"></p>
+        <p class="form-footnote">AI mode is selected automatically. No private data is required.</p>
+      </form>
+    </section>
+
+    <section id="results" class="results hidden">
+      <div class="results-head"><div><p class="eyebrow">02 / YOUR AI SHORTLIST</p><h2>Picked for <em>your context.</em></h2></div><span id="mode-badge" class="mode-badge">Local demo mode</span></div>
+      <div id="recommendation-grid" class="recommendation-grid"></div>
+      <div class="explanation-panel"><div class="explain-icon">✦</div><div><p class="eyebrow">THE AI REASONING</p><h3 id="ai-summary">A recommendation should come with a reason.</h3><p id="ai-explanation" class="muted"></p><div id="reason-chips" class="reason-chips"></div></div></div>
+      <div class="feedback-row"><span>Was this useful?</span><button type="button" data-feedback="yes">Yes, helpful</button><button type="button" data-feedback="no">Not quite</button><span id="feedback-note"></span></div>
+    </section>
+
+    <section id="how-ai-helps" class="ai-section">
+      <div class="section-heading"><p class="eyebrow">03 / WHY AI HELPS</p><h2>More than a menu.<br><em>A better decision.</em></h2><p class="muted">The value of AI is not just generating a meal name. It is connecting small signals into a useful, explainable choice.</p></div>
+      <div class="ai-benefits"><article><span class="benefit-number">01</span><h3>Personal, not popular</h3><p>AI combines your goal, diet, flavor, time, and budget to move beyond the same trending list for everyone.</p></article><article><span class="benefit-number">02</span><h3>Explainable by design</h3><p>Every suggestion includes its reasoning and trade-offs, so you stay in control of the final choice.</p></article><article><span class="benefit-number">03</span><h3>Adapts with feedback</h3><p>A simple “not quite” signal can make the next shortlist more useful instead of starting from zero.</p></article></div>
+    </section>
+
+    <section class="quote-section"><p>“The best recommendation is not the fanciest dish. It is the one that fits <em>this moment.</em>”</p><span>— The SwaadAI principle</span></section>
+  </main>
+  <footer><span>✦ SwaadAI</span><span>AI-assisted food discovery · Demo project</span><span>Built with Java + Python</span></footer>
+  <script src="/app.js?v=5"></script>
+</body>
+</html>
