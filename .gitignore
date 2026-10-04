@@ -1,0 +1,9 @@
+*.class
+*.log
+*.err
+__pycache__/
+*.pyc
+.env
+.venv/
+node_modules/
+swaadai-*.png
