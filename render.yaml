@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: swaadai-python
+    runtime: docker
+    plan: free
+    dockerfilePath: ./ai-python/Dockerfile
+    dockerContext: .
+    healthCheckPath: /health
+    envVars:
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: OPENAI_MODEL
+        value: gpt-4o-mini
+
+  - type: web
+    name: swaadai-java
+    runtime: docker
+    plan: free
+    dockerfilePath: ./backend-java/Dockerfile
+    dockerContext: .
+    healthCheckPath: /
+    envVars:
+      - key: PYTHON_RECOMMEND_URL
+        value: https://swaadai-python.onrender.com/recommend
